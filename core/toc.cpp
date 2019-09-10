@@ -5,6 +5,7 @@
 #include <sstream>
 
 #include "exception.h"
+#include "utils.h"
 
 struct Entry
 {
@@ -77,6 +78,11 @@ static std::vector<Entry> ReadTOCFile(const std::string &filename)
 
     while (std::getline(input, line))
     {
+        str_trim(line);
+
+        if (line.empty())
+            continue;
+
         entries.emplace_back(ParseLine(line, line_num));
         line_num++;
     }

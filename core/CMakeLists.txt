@@ -4,6 +4,7 @@ add_library(core STATIC
 	pdf_toc.cpp
     toc.cpp
 	utf8.cpp
+	utils.cpp
 	exception.h
 	pdf_toc.h
 	toc.h
